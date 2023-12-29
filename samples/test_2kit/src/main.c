@@ -122,5 +122,8 @@ void main(void)
 			printk("\n%i bytes received\n", app_uart_rx_buf_cnt);
 			app_uart_rx_buf_cnt = 0;
 		}
+
+		static uint8_t my_data[] = {1,2,3,4,5};
+		app_uart_send(my_data, sizeof(my_data), K_FOREVER);
 	}
 }
